@@ -1,0 +1,30 @@
+server:
+    port: 9081
+    context-path: /api
+
+spring:
+    devtools:
+      restart:
+        exclude:  static/**,public/**
+    #添加RabbitMQ的配置
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: hxy
+      password: hxy1
+    datasource:
+        name: sv
+        url: jdbc:mysql://115.29.32.62:3306/ec?useUnicode=true&characterEncoding=utf8
+        username: root
+        password: 7d428bc667
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+#hxy:
+  #rabbitmq:
+    #host: localhost
+    #port: 5672
+    #username: hxy
+    #password: hxy1
+
+
