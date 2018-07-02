@@ -25,9 +25,6 @@ public class Producer {
     @Autowired
     public RabbitTemplate rabbitTemplate;
 
-    @Autowired
-    private AmqpTemplate amqpTemplate;
-
     @RequestMapping(value = "/test/{abc}",method = RequestMethod.GET)
     public String test(@PathVariable(value = "abc") String abc){
           rabbitTemplate.setReplyTimeout(10);//设置超时时间

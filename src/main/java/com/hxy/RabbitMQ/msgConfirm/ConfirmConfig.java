@@ -25,7 +25,7 @@ import java.util.concurrent.TimeoutException;
 public class ConfirmConfig {
 
     @Bean
-    public ConnectionFactory createConnectionFactory() throws IOException, TimeoutException {
+    public ConnectionFactory createConnectionFactory(){
         CachingConnectionFactory connectionFactory = new CachingConnectionFactory("127.0.0.1", 5672);
         connectionFactory.setUsername("hxy");
         connectionFactory.setPassword("hxy1");
