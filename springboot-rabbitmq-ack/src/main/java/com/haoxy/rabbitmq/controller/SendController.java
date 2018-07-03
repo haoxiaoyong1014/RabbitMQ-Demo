@@ -1,10 +1,11 @@
 package com.haoxy.rabbitmq.controller;
 
+import com.haoxy.rabbitmq.model.ResponseEntity;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.support.CorrelationData;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 import javax.annotation.Resource;
 import java.util.UUID;
@@ -30,7 +31,7 @@ public class SendController {
     public ResponseEntity direct(String p) {
         CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
         rabbitTemplate.convertAndSend("DIRECT_EXCHANGE", "DIRECT_ROUTING_KEY", p, correlationData);
-        return (ResponseEntity) ResponseEntity.ok();
+        return ResponseEntity.ok();
     }
 
     /**
@@ -43,6 +44,6 @@ public class SendController {
     public ResponseEntity send(String p) {
         CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
         rabbitTemplate.convertAndSend("FANOUT_EXCHANGE", "", p, correlationData);
-        return (ResponseEntity) ResponseEntity.ok();
+        return ResponseEntity.ok();
     }
 }

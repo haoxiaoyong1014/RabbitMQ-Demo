@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="springboot-rabbitmq-ack" target="1.6" />
+      <module name="springboot-rabbitmq-ack" target="1.8" />
       <module name="testNexus" target="1.6" />
     </bytecodeTargetLevel>
   </component>
